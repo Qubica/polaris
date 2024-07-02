@@ -45,6 +45,8 @@ export interface DropZoneProps {
   labelHidden?: boolean;
   /** ID for file input */
   id?: string;
+  /** Name for file input */
+  name?: string;
   /** Allowed file types */
   accept?: string;
   /**
@@ -127,6 +129,7 @@ export const DropZone: React.FunctionComponent<DropZoneProps> & {
   overlayText,
   errorOverlayText,
   id: idProp,
+  name,
   type = 'file',
   onClick,
   error,
@@ -418,6 +421,7 @@ export const DropZone: React.FunctionComponent<DropZoneProps> & {
           <Text variant="bodySm" as="span" visuallyHidden>
             <input
               id={id}
+              name={name}
               accept={accept}
               disabled={disabled}
               multiple={allowMultiple}
